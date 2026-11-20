@@ -1,5 +1,5 @@
 import java.util.*;
-public abstract class Infrastructure {
+public abstract class Infrastructure implements Maintainable{
     private String name;
     private String location;
     private int condition; // condition 1 to 10
@@ -36,21 +36,31 @@ public int getCondition(){
 }
 public void setCondition(int condition){
         if(condition<1||condition>10){
-            throw new new InvalidInputException("number must be between 1 and 10");
+            throw new InvalidInputException("number must be between 1 and 10");
         }
         this.condition=condition;
 }
 
 @Override
-  public void scheduleMaintenance(){
+public void scheduleMaintenance(){
         maintenanceScheduled=true;
 }
 @Override
-    public boolean isMaintainaceschedueled(){
-        return maintenanceScheduled
+public boolean isMaintenanceScheduled(){
+        return maintenanceScheduled;
 }
     public abstract double calculateMaintenanceCost();
+    public abstract String getType();
+    public abstract String getDetails();
+    public abstract String getExtraData();
 
-
-
+    @Override
+    public String toString() {
+        return "Infrastructure{" +
+                "name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", condition=" + condition +
+                ", maintenanceScheduled=" + maintenanceScheduled +
+                '}';
+    }
 }
