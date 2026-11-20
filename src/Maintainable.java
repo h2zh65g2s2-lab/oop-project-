@@ -1,7 +1,5 @@
 public interface Maintainable {
-    abstract void scheduleMaintenance();
+    void scheduleMaintenance();
 
-    abstract boolean isMaintenanceScheduled();
-
-    public abstract boolean isMaintainaceschedueled();
+    boolean isMaintenanceScheduled();
 }

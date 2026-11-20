@@ -1,4 +1,4 @@
-public class Factory extends Infrastructure{
+public class Factory extends Infrastructure {
 private int machineCount;
 
 public Factory(String name,String location,int condition,int machineCount){
